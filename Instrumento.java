@@ -17,11 +17,12 @@ public class Instrumento
     /**
      * Constructor de la clase Instrumento
      */
-    public Instrumento(String tipoInstrumento, String marcaInstrumento, int precioInstrumento)
+    public Instrumento(String tipoInstrumento, String marcaInstrumento, int precioInstrumento, int id)
     {
         this.tipoInstrumento = tipoInstrumento;
         this.tipoInstrumento = marcaInstrumento;
         precioInstrumento = 0;
+        this.id=id;
     }
 
     /**

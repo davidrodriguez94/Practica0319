@@ -17,17 +17,25 @@ public class Tienda
     public Tienda()
     {
         instrumentos = new ArrayList<Instrumento>();
-        id = 0;
+        id = 1;
     }
     
     /**
      * Añade instrumentos
      */
-    public void addInstrumento(String instrumento, String marca, int precio)
+    public void addInstrumento(String instrumento, String marca, int precio, int id)
     {
-        Instrumento nuevoInstrumento = new Instrumento(instrumento,marca,precio);
+        Instrumento nuevoInstrumento = new Instrumento(instrumento,marca,precio,id);
         instrumentos.add(nuevoInstrumento);
+        id= id+1;
     }
     
-    
+    /**
+     *  Muestra un listado de los objetos
+     *  pertenecientes a la colección con todos sus datos
+     */
+    public void listarObjetos()
+    {
+        
+    }
 }
