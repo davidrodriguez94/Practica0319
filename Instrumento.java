@@ -20,7 +20,7 @@ public class Instrumento
     public Instrumento(String tipoInstrumento, String marcaInstrumento, int precioInstrumento, int id)
     {
         this.tipoInstrumento = tipoInstrumento;
-        this.tipoInstrumento = marcaInstrumento;
+        this.marcaInstrumento = marcaInstrumento;
         precioInstrumento = 0;
         this.id=id;
     }

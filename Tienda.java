@@ -36,6 +36,11 @@ public class Tienda
      */
     public void listarObjetos()
     {
+        System.out.println("Instrumentos :");
         
+        for(Instrumento instrumento : instrumentos){
+            System.out.println(instrumento.devolverCaracteristicas());
+        }
     }
+    
 }
