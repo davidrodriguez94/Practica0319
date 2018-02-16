@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 /**
  * Write a description of class Instrumento here.
  *
@@ -21,7 +24,7 @@ public class Instrumento
     {
         this.tipoInstrumento = tipoInstrumento;
         this.marcaInstrumento = marcaInstrumento;
-        precioInstrumento = 0;
+        this.precioInstrumento = 0;
         this.id=id;
     }
 
@@ -60,9 +63,11 @@ public class Instrumento
     /**
      * Método que define el precio de instrumento 
      */
-    public void setPrecioInstrumento()
+    public void setPrecioInstrumento(int precio)
     {
-        precioInstrumento = 0;
+        if(precio >= 0){
+            this.precioInstrumento = precioInstrumento;
+        }
     }
 
     /**
@@ -72,7 +77,14 @@ public class Instrumento
     {
         return precioInstrumento;
     }
-    
+
+    /**
+     * Método que retorna el id
+     */
+    public int getId(){
+        return id;
+    }
+
     /**
      * Método que devuelva un String con
      * todas la características del objeto en formato texto
@@ -82,4 +94,21 @@ public class Instrumento
         String detallesProducto = "Tipo: " + tipoInstrumento + "Marca: " +  marcaInstrumento + "Precio: " + precioInstrumento + "ID: " + id; 
         return detallesProducto;
     }
+
+    public void metodo01(String datos)
+    {
+        try {
+            File archivo = new File(datos);
+            Scanner sc = new Scanner(archivo);
+            while (sc.hasNextLine()) {
+                System.out.println(sc.nextLine());
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
+
