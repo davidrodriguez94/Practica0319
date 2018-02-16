@@ -1,0 +1,3 @@
+Guitarra#Gibson#2000
+Oboe#Buffet#5000
+Piano#Steinway#20000

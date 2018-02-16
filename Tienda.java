@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 /**
  * Write a description of class Tienda here.
  *
@@ -15,10 +18,25 @@ public class Tienda
     /**
      * Constructor de Tienda
      */
-    public Tienda()
+    public Tienda(String txt)
     {
         instrumentos = new ArrayList<Instrumento>();
         id = 1;
+        try {
+            File archivo = new File(txt);
+            Scanner sc = new Scanner(archivo);
+            while (sc.hasNextLine()) {
+                String[] arrayStrings = sc.nextLine().split("#");
+                String instrumento = arrayStrings[0];
+                String marca = arrayStrings[1];
+                int precio = Integer.parseInt(arrayStrings[2]);
+                addInstrumento(instrumento,marca,precio);
+            }
+            sc.close();
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     
     /**
