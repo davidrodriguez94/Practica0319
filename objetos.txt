@@ -1,3 +1,10 @@
-Guitarra#Gibson#2000
-Oboe#Buffet#5000
-Piano#Steinway#20000
+GuitarraElectrica#Gibson#2000#Cuerda
+Oboe#Buffet#5000#Viento
+Piano#Steinway#20000#Percusion
+Bateria#Yamaha#5000#Percusion
+Microfono#Yeti#150#Percusion
+Violin#EdgarRuss#7200#Cuerda
+Bajo#Fender#8000#Cuerda
+Flauta#Hacendado#20#Viento
+Auriculares#Steelseries#90#Percusion
+EquipoDJ#Denon#5000#Percusion

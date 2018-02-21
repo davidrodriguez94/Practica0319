@@ -17,15 +17,24 @@ public class Instrumento
     private int precioInstrumento;
     // Define un numero identificativo
     private int id;
+    // Categoria cuerda, viento, percusion
+    private String categoria;
     /**
      * Constructor de la clase Instrumento
      */
-    public Instrumento(String tipoInstrumento, String marcaInstrumento, int precioInstrumento, int id)
+    public Instrumento(String tipoInstrumento, String marcaInstrumento, int precioInstrumento, String categoria, int id)
     {
         this.tipoInstrumento = tipoInstrumento;
         this.marcaInstrumento = marcaInstrumento;
         this.precioInstrumento = 0;
         this.id=id;
+        String categoriaActual = categoria.toLowerCase();
+        if(categoriaActual.equals("cuerda") || categoriaActual.equals("viento") || categoriaActual.equals("percusion")){
+            this.categoria = categoria;
+        }
+        else{
+            this.categoria = "";
+        }
     }
 
     /**
@@ -86,29 +95,32 @@ public class Instrumento
     }
 
     /**
+     * Cambia el tipo de categoría
+     */
+    public void setCategoria(){
+        String categoriaActual = categoria.toLowerCase();
+        if(categoriaActual.equals("cuerda") || categoriaActual.equals("viento") || categoriaActual.equals("percusion")){
+            this.categoria = categoria;
+        }
+        else{
+            this.categoria = "";
+        }
+    }
+
+    /**
+     * Método que retorna la categoría
+     */
+    public String getCategoria(){
+        return categoria;
+    }
+
+    /**
      * Método que devuelva un String con
      * todas la características del objeto en formato texto
      */
     public String devolverCaracteristicas()
     {
-        String detallesProducto = "Tipo: " + tipoInstrumento + "Marca: " +  marcaInstrumento + "Precio: " + precioInstrumento + "ID: " + id; 
+        String detallesProducto = "Tipo: " + tipoInstrumento + "Marca: " +  marcaInstrumento + "Precio: " + precioInstrumento + "Categoria: " + categoria + "ID: " + id; 
         return detallesProducto;
     }
-
-    public void metodo01(String datos)
-    {
-        try {
-            File archivo = new File(datos);
-            Scanner sc = new Scanner(archivo);
-            while (sc.hasNextLine()) {
-                System.out.println(sc.nextLine());
-            }
-            sc.close();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
-

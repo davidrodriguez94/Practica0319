@@ -30,7 +30,8 @@ public class Tienda
                 String instrumento = arrayStrings[0];
                 String marca = arrayStrings[1];
                 int precio = Integer.parseInt(arrayStrings[2]);
-                addInstrumento(instrumento,marca,precio);
+                String categoria = arrayStrings[3];
+                addInstrumento(instrumento,marca,precio,categoria);
             }
             sc.close();
         }
@@ -42,9 +43,9 @@ public class Tienda
     /**
      * Añade instrumentos
      */
-    public void addInstrumento(String instrumento, String marca, int precio)
+    public void addInstrumento(String instrumento, String marca, int precio, String categoria)
     {
-        Instrumento nuevoInstrumento = new Instrumento(instrumento,marca,precio,id);
+        Instrumento nuevoInstrumento = new Instrumento(instrumento,marca,precio,categoria,id);
         instrumentos.add(nuevoInstrumento);
         id= id+1;
     }
